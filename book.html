@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+
+<title>Hungry kya?</title>
+
+    
+<style>
+#ff
+{
+display:none;
+
+}
+#col2
+{
+padding-left:100px;
+}
+
+#heading
+{
+  padding-top:80px;
+  opacity:0.8;
+  background-image:url("assets/bg2.jpg");
+}
+#name
+{
+padding-top:10px;
+font-size:65px;
+}
+#event
+{
+
+background-image:url("assets/banner.jpg");
+opacity:1;
+
+}
+.affix
+{
+    top: 0;
+    width: 100%;
+    z-index: 9999!important;
+}
+.affix + .container-fluid 
+{
+    padding-top: 70px;
+}
+div.transbox
+{
+  align-self: center;
+  padding-top:10px;
+  height:550px;
+  margin: 50px;
+  border: 1px solid black;
+  opacity: 0.9;
+  background-image:url("assets/trr.jpg");
+ }
+#panel
+{
+padding-top: 50px;
+}
+#media
+{
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 70px;
+	padding-left: 50px;
+	padding-top: 20px;
+	padding-right: 50px;
+}
+label
+{
+
+   font-family: 'Charm';
+   font-size:17px;
+}
+</style>
+
+
+
+
+<script>
+$(document).ready(function(){
+$("#b").click(function(){
+$("#b,#media").hide(function(){
+$("#ff").show();
+});
+});
+});
+</script>
+
+
+
+<!--for validation-->
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+   });
+</script>
+
+
+
+<script>
+	$(document).ready(function(){
+	$("#b").click(function(){
+		$("#AA,#confirm").hide();
+	});
+});
+</script>
+
+
+
+<script>
+	$(document).ready(function(){
+		$("#people").keyup(function(){
+			$("#AA").show();
+		});
+	});
+</script>
+
+<script>
+		$(document).ready(function(){
+			$("#AA").click(function(){
+				$("#confirm").show();
+			});
+		});
+</script>
+</head>
+
+
+
+
+
+<body>
+
+<!--for website name-->
+<div class="container-fluid" id="heading"  style="color:black;height:310px;">
+  <h1 style="font-size: 80px;font-family: 'Allura';" id="name"><b><center >Hungry Kya?</center></b></h1>
+  <h4 style="font-size: 25px;font-family: 'Allura';"><b><center>Food To fit your lifestyle & health.<center></b></h4>
+  <h6 style="font-size: 25px;font-family: 'Allura';"><b><center>Specialized in Indian Cuisine!!<center></b></h6>
+</div>
+
+
+
+
+<!--for navbar using affix-->
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="290">
+  <ul class="nav navbar-nav">
+     <li><a href="web.html"><span class="glyphicon glyphicon-home"></span></a></li>
+	<li><a href="web.html">About</a></li>
+    <li><a href="menu.html">Food</a></li>
+    <li><a href="drinks.html">Drinks</a></li>
+    <li><a href="recipe.html">Recipe</a></li>
+    <li><a href="event.html">Event</a></li>
+    <li><a href="#">Book a Table</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="web.html#footer">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+<!--for transbix-->
+<div class="container-fluid" id="event" style="height:950px">
+<br><br><br><br><br>
+  <div class="transbox" style="height:620px;">
+    <div class="media" id="media">
+    	<div class="media-left">
+      	<img src="assets/media.jpg" class="media-object" style="height: 300px; width:550px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading" style="font-size: 60px;font-family: 'Allura';"><center><b><i>Pre-Book</i> your table!!</b></center></h4><br>
+      <b><h3 style="font-family: 'Charm';font-size:25px;"><center>Don't wanna miss your special day!!!<br>Hate waiting!!<br>
+      Pre-book your table now!! <br>Make your special day even more special.</center></h3></b>
+      <br>
+      <center><button type="button" id="b" class="btn btn-warning btn-justified btn-lg " >Book A Table</button>
+	  </center>
+	</div>
+  	</div>
+
+
+
+<div class="container" id="ff" >
+<center><h2 style="font-family: 'Charm';font-size:40px;">Book Your Table</h2></center>
+  <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+
+  	<!--book my table for-->
+    <form class="form-horizontal" form ng-app="myApp" ng-controller="validateCtrl" name="myForm" validate>
+
+    	<!--for name input-->
+    <div class="form-group">
+      <label class="control-label col-sm-2" >Name:</label>
+      <div  class="col-sm-10">
+        <input type="text" class="form-control" name="user" ng-model="user" required>
+				<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+				<span ng-show="myForm.user.$error.required">Username is required.</span>
+				</span>
+      </div>
+    </div>
+
+
+
+
+	<!--for date input-->
+    <div class="form-group">
+      <label class="control-label col-sm-2" >Date:</label>
+      <div class="col-sm-10">          
+        <input type="date" class="form-control" name="date" ng-model="date" required>
+				<span style="color:red" ng-show="myForm.date.$dirty && myForm.date.$invalid">
+				<span ng-show="myForm.date.$error.required">Date is required.</span>
+				</span>
+      </div>
+    </div>
+
+
+
+
+
+<!--for email-->
+ 	<div class="form-group">
+      <label class="control-label col-sm-2" >Email:</label>
+      <div class="col-sm-10">          
+        <input type="email" class="form-control" name="email" ng-model="email" required>
+				<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+				<span ng-show="myForm.email.$error.required">Email is required.</span>
+				<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+				</span>
+      </div>
+    </div>
+
+
+
+
+
+
+<!--for mobile no-->
+ <div class="form-group">
+      <label class="control-label col-sm-2" >Mobile:</label>
+      <div class="col-sm-10">          
+        <input type="tel" class="form-control" maxlength="10" name="mob" ng-model="mob" required>
+			<span style="color:red" ng-show="myForm.mob.$dirty && myForm.mob.$invalid">
+			<span ng-show="myForm.mob.$error.required">Phone Number is required.</span>
+			</span>
+      </div>
+    </div>
+
+
+
+<!-- for time-->
+    <div class="form-group">
+      <label class="control-label col-sm-2" >Time:</label>
+      <div class="col-sm-10">          
+        <input type="time" class="form-control" name="time" ng-model="time" required >
+        <span style="color:blue">*24-hour format.</span>
+
+			<span style="color:red" ng-show="myForm.time.$dirty && myForm.time.$invalid">
+			<span ng-show="myForm.time.$error.required">Time is required.</span>
+						
+			</span>
+      </div>
+    </div>
+
+
+
+
+<!--for no of people-->
+ <div class="form-group">
+      <label class="control-label col-sm-2" >No of People:</label>
+      <div class="col-sm-10">          
+        <input id="people" type="tel" maxlength="1" class="form-control " name="peep" ng-model="peep" required>
+				<span style="color:red" ng-show="myForm.peep.$dirty && myForm.peep.$invalid">
+				<span ng-show="myForm.peep.$error.required">Number of People is required.</span>
+				</span>
+      </div>
+    </div>
+ 
+
+
+ <!--for message-->
+<div class="form-group">
+      <label class="control-label col-sm-2" >Any Message:</label>
+      <div class="col-sm-10">          
+        <input type="textarea" class="form-control" id="msg">
+        <span style="color:blue">*This field is optional</span>
+		</span>
+      </div>
+    </div>
+
+
+
+    <!--for book button-->
+    <center><input type="submit" class="btn btn-warning btn-lg" id="AA" ng-disabled="myForm.user.$pristine && myForm.user.$invalid || myForm.email.$pristine && myForm.email.$invalid ||  myForm.date.$pristine && myForm.date.$invalid ||  myForm.mob.$pristine && myForm.mob.$invalid ||  myForm.peep.$pristine && myForm.peep.$invalid ||  myForm.time.$pristine && myForm.time.$invalid" value="Book A Table"></center><br>
+<center><b><p style=" font-family: 'Charm';font-size:17px;" id="confirm">Thankyou {{user}} for choosing us! Your table has been booked.<br>You will recieve a confirmation through SMS or email.</p></b></centre>
+</div>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
+  
